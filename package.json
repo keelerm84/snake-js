@@ -1,0 +1,12 @@
+{
+  "name": "snake-js",
+  "dependencies": {
+    "socket.io": "~0.9.16",
+    "express": "~3.3.5"
+  },
+  "devDependencies": {
+    "socket.io-client": "~0.9.16",
+    "mocha": "~1.12.0",
+    "should": "~1.2.2"
+  }
+}
