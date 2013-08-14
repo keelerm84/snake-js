@@ -16,7 +16,9 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
-io.sockets.on('connect', function (socket) {
-  // send a message
-  socket.emit('connect', { text: 'sup' });
+io.sockets.on('connection', function (socket) {
+  socket.emit('message', { text: 'sup' });
+  socket.on('message', function(message) {
+      console.log("Received message from client: " + message.text);
+  });
 });
