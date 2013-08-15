@@ -23,4 +23,11 @@ describe('SnakeModel', function() {
     snake.nodes[0].y.should.equal(0);
   });
 
+  describe('invalid parameters', function() {
+    it('should default length to 1 if invalid', function() {
+      snake = new Snake(0, 0, -3);
+      snake.len.should.equal(1);
+    });
+  });
+
 });
