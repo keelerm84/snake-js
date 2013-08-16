@@ -40,4 +40,22 @@ describe('SnakeModel', function() {
       snake.len.should.equal(1);
     });
   });
+
+  describe('handles directions', function() {
+    it('should alter direction on changes in configured direction', function() {
+      var snake = new Snake(0, 0, 3);
+      var data = [
+        { direction: "s", nodes: [{x: 0, y: 1}, {x: 0, y: 0}]},
+        { direction: "e", nodes: [{x: 1, y: 1}, {x: 0, y: 1}, {x: 0, y: 0}]},
+        { direction: "n", nodes: [{x: 1, y: 0}, {x: 1, y: 1}, {x: 0, y: 1}]},
+        { direction: "w", nodes: [{x: 0, y: 0}, {x: 1, y: 0}, {x: 1, y: 1}]}
+      ];
+
+      data.forEach(function(datum) {
+        snake.direction = datum.direction;
+        snake.step();
+        snake.nodes.should.eql(datum.nodes);
+      });
+    });
+  });
 });
