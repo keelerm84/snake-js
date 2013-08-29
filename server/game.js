@@ -1,8 +1,9 @@
 'use strict';
 
 var Game = function() {
+  var uuid = require('node-uuid');
   this.players = [];
-  this.id = "1234567890"; // TODO: Generate a unique hash here
+  this.id = uuid.v4();
 }
 
 Game.prototype.addPlayer = function(player) {

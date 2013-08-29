@@ -3,7 +3,8 @@
   "dependencies": {
     "socket.io": "~0.9.16",
     "express": "~3.3.5",
-    "jaws": "~0.12.1"
+    "jaws": "~0.12.1",
+    "node-uuid": "1.4.1"
   },
   "devDependencies": {
     "socket.io-client": "~0.9.16",

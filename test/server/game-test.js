@@ -29,4 +29,9 @@ describe('GameModel', function() {
   it('should generate unique hash', function() {
     game.should.have.property('id');
   });
+
+  it('should generate different unique hashes for each game', function() {
+    var secondGame = new Game();
+    game.id.should.not.equal(secondGame.id);
+  });
 });
