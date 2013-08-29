@@ -5,7 +5,7 @@ var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
 var path = require('path');
-var Snake = require('snake-model');
+var Snake = require('./snake-model');
 
 server.listen(4000);
 
